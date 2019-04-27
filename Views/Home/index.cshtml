@@ -1,0 +1,26 @@
+@model IEnumerable<string>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Guess Hobbies</h1>
+    <form action="/add" method="post">
+        <input type="text" name="hobby" id="">
+        <input type="submit" value="Submit">
+    </form>
+    @{
+        if(@ViewBag.active == 1)
+        {
+            foreach(var hobbies in @Model)
+            {
+                @hobbies
+            }
+        }
+    }
+</body>
+</html>
